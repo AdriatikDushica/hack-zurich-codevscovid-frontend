@@ -19,9 +19,8 @@ const Header = ({ history, location: { pathname } }) => {
 
   let currentTabIndex = -1;
 
-  if (pathname === "/hack-zurich-codevscovid-frontend/") currentTabIndex = 0;
-  else if (pathname === "/hack-zurich-codevscovid-frontend//requirements")
-    currentTabIndex = 1;
+  if (pathname === "/") currentTabIndex = 0;
+  else if (pathname === "/requirements") currentTabIndex = 1;
 
   return (
     <AppBar position="static">
