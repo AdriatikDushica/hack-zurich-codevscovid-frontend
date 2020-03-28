@@ -6,11 +6,9 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router basename="/hack-zurich-codevscovid-frontend/">
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router basename="/hack-zurich-codevscovid-frontend/">
+    <App />
+  </Router>,
   document.getElementById("root")
 );
 

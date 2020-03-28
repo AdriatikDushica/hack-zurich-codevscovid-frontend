@@ -7,6 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import Register from "./Pages/Register";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -29,6 +30,8 @@ const Header = ({ history, location: { pathname } }) => {
           Suppy demand
         </Typography>
         <Button color="inherit">Login</Button>
+        <Typography>or</Typography>
+        <Register />
       </Toolbar>
       <Tabs value={currentTabIndex} centered>
         <Tab
