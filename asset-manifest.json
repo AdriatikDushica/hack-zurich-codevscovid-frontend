@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css",
-    "main.js": "/hack-zurich-codevscovid-frontend/static/js/main.b64f97d9.chunk.js",
-    "main.js.map": "/hack-zurich-codevscovid-frontend/static/js/main.b64f97d9.chunk.js.map",
+    "main.js": "/hack-zurich-codevscovid-frontend/static/js/main.d7810a02.chunk.js",
+    "main.js.map": "/hack-zurich-codevscovid-frontend/static/js/main.d7810a02.chunk.js.map",
     "runtime-main.js": "/hack-zurich-codevscovid-frontend/static/js/runtime-main.0cb60042.js",
     "runtime-main.js.map": "/hack-zurich-codevscovid-frontend/static/js/runtime-main.0cb60042.js.map",
     "static/js/2.102257d9.chunk.js": "/hack-zurich-codevscovid-frontend/static/js/2.102257d9.chunk.js",
     "static/js/2.102257d9.chunk.js.map": "/hack-zurich-codevscovid-frontend/static/js/2.102257d9.chunk.js.map",
     "index.html": "/hack-zurich-codevscovid-frontend/index.html",
-    "precache-manifest.50ac2af696b4021ccde989c4ebeef3e5.js": "/hack-zurich-codevscovid-frontend/precache-manifest.50ac2af696b4021ccde989c4ebeef3e5.js",
+    "precache-manifest.5257c5e91f5ecd28d7d919f6944ff484.js": "/hack-zurich-codevscovid-frontend/precache-manifest.5257c5e91f5ecd28d7d919f6944ff484.js",
     "service-worker.js": "/hack-zurich-codevscovid-frontend/service-worker.js",
     "static/css/main.9900741b.chunk.css.map": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css.map",
     "static/js/2.102257d9.chunk.js.LICENSE.txt": "/hack-zurich-codevscovid-frontend/static/js/2.102257d9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0cb60042.js",
     "static/js/2.102257d9.chunk.js",
     "static/css/main.9900741b.chunk.css",
-    "static/js/main.b64f97d9.chunk.js"
+    "static/js/main.d7810a02.chunk.js"
   ]
 }
