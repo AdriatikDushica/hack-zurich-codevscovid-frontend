@@ -41,7 +41,7 @@ const Header = ({ history, location: { pathname } }) => {
           tabIndex={1}
           label="Requirements"
           onClick={() =>
-            history.push("/hack-zurich-codevscovid-frontend//requirements")
+            history.push("/hack-zurich-codevscovid-frontend/requirements")
           }
         />
       </Tabs>
