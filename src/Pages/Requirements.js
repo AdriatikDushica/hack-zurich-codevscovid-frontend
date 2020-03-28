@@ -1,5 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Requirements  = () => <div>requirements</div>
+const Requirements = () => <div>requirements</div>;
 
 export default Requirements;
