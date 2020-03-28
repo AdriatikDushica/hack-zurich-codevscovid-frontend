@@ -5,9 +5,9 @@ import Typography from "@material-ui/core/Typography";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Register from "./Pages/Register";
+import Login from "./Pages/Login";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -29,7 +29,7 @@ const Header = ({ history, location: { pathname } }) => {
         <Typography variant="h6" align="left" className={classes.title}>
           Suppy demand
         </Typography>
-        <Button color="inherit">Login</Button>
+        <Login />
         <Typography>or</Typography>
         <Register />
       </Toolbar>
