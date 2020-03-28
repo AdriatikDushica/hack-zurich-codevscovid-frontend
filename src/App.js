@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./Header";
 import { Route, Switch } from "react-router-dom";
-import Requirements from "./Pages/Requirements";
+import Requests from "./Pages/Requests";
 import AvailableResources from "./Pages/AvailableResources";
 
 function App() {
@@ -10,11 +10,11 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/hack-zurich-codevscovid-frontend/" exact>
+        <Route path="/" exact>
           <AvailableResources />
         </Route>
-        <Route path="/hack-zurich-codevscovid-frontend/requirements">
-          <Requirements />
+        <Route path="/requests">
+          <Requests />
         </Route>
       </Switch>
     </div>
