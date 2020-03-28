@@ -5,8 +5,18 @@ import Typography from "@material-ui/core/Typography";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const Header = ({ history, location: { pathname } }) => {
+  const classes = useStyles();
+
   let currentTabIndex = -1;
 
   if (pathname === "/") currentTabIndex = 0;
@@ -15,7 +25,10 @@ const Header = ({ history, location: { pathname } }) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6">Suppy-Demand</Typography>
+        <Typography variant="h6" align="left" className={classes.title}>
+          Suppy demand
+        </Typography>
+        <Button color="inherit">Login</Button>
       </Toolbar>
       <Tabs value={currentTabIndex} centered>
         <Tab
