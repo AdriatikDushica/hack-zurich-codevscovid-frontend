@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4bd74bbd41de354767d0850fccf90b0",
+    "revision": "14cd1e1f27b3336bb63d8f8c8ce42b4c",
     "url": "/hack-zurich-codevscovid-frontend/index.html"
   },
   {
-    "revision": "2317e6865ea93b009d9e",
+    "revision": "85880832489dfe3b2004",
     "url": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css"
   },
   {
-    "revision": "d0f0c25e318fd98bc6f7",
-    "url": "/hack-zurich-codevscovid-frontend/static/js/2.c82e3439.chunk.js"
+    "revision": "e491d08ddd8c91af06eb",
+    "url": "/hack-zurich-codevscovid-frontend/static/js/2.b76651b5.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/hack-zurich-codevscovid-frontend/static/js/2.c82e3439.chunk.js.LICENSE.txt"
+    "url": "/hack-zurich-codevscovid-frontend/static/js/2.b76651b5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2317e6865ea93b009d9e",
-    "url": "/hack-zurich-codevscovid-frontend/static/js/main.4429b0d8.chunk.js"
+    "revision": "85880832489dfe3b2004",
+    "url": "/hack-zurich-codevscovid-frontend/static/js/main.38d110cd.chunk.js"
   },
   {
     "revision": "26f004e054434790ae34",
