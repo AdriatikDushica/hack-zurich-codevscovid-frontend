@@ -21,7 +21,7 @@ const Header = ({history, location: {pathname}}) => {
                     Suppy-Demand
                 </Typography>
             </Toolbar>
-            <Tabs value={currentTabIndex}>
+            <Tabs value={currentTabIndex} centered>
                 <Tab tabIndex={0} label="Available Resources" onClick={() => history.push('/')}/>
                 <Tab tabIndex={1} label="Requirements" onClick={() => history.push('/requirements')}/>
             </Tabs>
