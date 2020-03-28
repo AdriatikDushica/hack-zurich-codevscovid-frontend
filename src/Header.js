@@ -35,14 +35,12 @@ const Header = ({ history, location: { pathname } }) => {
         <Tab
           tabIndex={0}
           label="Available Resources"
-          onClick={() => history.push("/hack-zurich-codevscovid-frontend/")}
+          onClick={() => history.push("/")}
         />
         <Tab
           tabIndex={1}
           label="Requirements"
-          onClick={() =>
-            history.push("/hack-zurich-codevscovid-frontend/requirements")
-          }
+          onClick={() => history.push("/requirements")}
         />
       </Tabs>
     </AppBar>
