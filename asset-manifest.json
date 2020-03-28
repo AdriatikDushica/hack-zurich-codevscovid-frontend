@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css",
+    "main.js": "/hack-zurich-codevscovid-frontend/static/js/main.5808b42d.chunk.js",
+    "main.js.map": "/hack-zurich-codevscovid-frontend/static/js/main.5808b42d.chunk.js.map",
+    "runtime-main.js": "/hack-zurich-codevscovid-frontend/static/js/runtime-main.0cb60042.js",
+    "runtime-main.js.map": "/hack-zurich-codevscovid-frontend/static/js/runtime-main.0cb60042.js.map",
+    "static/js/2.786450a8.chunk.js": "/hack-zurich-codevscovid-frontend/static/js/2.786450a8.chunk.js",
+    "static/js/2.786450a8.chunk.js.map": "/hack-zurich-codevscovid-frontend/static/js/2.786450a8.chunk.js.map",
+    "index.html": "/hack-zurich-codevscovid-frontend/index.html",
+    "precache-manifest.19c1a88ba9130cad23e46e0ba5ffac72.js": "/hack-zurich-codevscovid-frontend/precache-manifest.19c1a88ba9130cad23e46e0ba5ffac72.js",
+    "service-worker.js": "/hack-zurich-codevscovid-frontend/service-worker.js",
+    "static/css/main.9900741b.chunk.css.map": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css.map",
+    "static/js/2.786450a8.chunk.js.LICENSE.txt": "/hack-zurich-codevscovid-frontend/static/js/2.786450a8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cb60042.js",
+    "static/js/2.786450a8.chunk.js",
+    "static/css/main.9900741b.chunk.css",
+    "static/js/main.5808b42d.chunk.js"
+  ]
+}
