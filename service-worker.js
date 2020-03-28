@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hack-zurich-codevscovid-frontend/precache-manifest.19c1a88ba9130cad23e46e0ba5ffac72.js"
+  "/hack-zurich-codevscovid-frontend/precache-manifest.8b764e273df73c4e81cf1c4724bd35c1.js"
 );
 
 self.addEventListener('message', (event) => {

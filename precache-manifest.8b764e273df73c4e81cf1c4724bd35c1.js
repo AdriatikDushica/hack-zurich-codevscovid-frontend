@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb3e9841a7331d7630436013b42ac4e1",
+    "revision": "df3c5953dc90450b8f684390399f8559",
     "url": "/hack-zurich-codevscovid-frontend/index.html"
   },
   {
-    "revision": "d510a2bacd7a51132fc7",
+    "revision": "eacda3999991f1214138",
     "url": "/hack-zurich-codevscovid-frontend/static/css/main.9900741b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hack-zurich-codevscovid-frontend/static/js/2.786450a8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d510a2bacd7a51132fc7",
-    "url": "/hack-zurich-codevscovid-frontend/static/js/main.5808b42d.chunk.js"
+    "revision": "eacda3999991f1214138",
+    "url": "/hack-zurich-codevscovid-frontend/static/js/main.ea1df26f.chunk.js"
   },
   {
     "revision": "26f004e054434790ae34",
