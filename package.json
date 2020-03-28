@@ -48,5 +48,6 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  }
+  },
+  "proxy": "http://206.189.135.174"
 }
