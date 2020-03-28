@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/" exact>
+        <Route path="/hack-zurich-codevscovid-frontend/" exact>
           <AvailableResources />
         </Route>
-        <Route path="/requirements">
+        <Route path="/hack-zurich-codevscovid-frontend/requirements">
           <Requirements />
         </Route>
       </Switch>

@@ -19,8 +19,9 @@ const Header = ({ history, location: { pathname } }) => {
 
   let currentTabIndex = -1;
 
-  if (pathname === "/") currentTabIndex = 0;
-  else if (pathname === "/requirements") currentTabIndex = 1;
+  if (pathname === "/hack-zurich-codevscovid-frontend/") currentTabIndex = 0;
+  else if (pathname === "/hack-zurich-codevscovid-frontend//requirements")
+    currentTabIndex = 1;
 
   return (
     <AppBar position="static">
@@ -34,12 +35,14 @@ const Header = ({ history, location: { pathname } }) => {
         <Tab
           tabIndex={0}
           label="Available Resources"
-          onClick={() => history.push("/")}
+          onClick={() => history.push("/hack-zurich-codevscovid-frontend/")}
         />
         <Tab
           tabIndex={1}
           label="Requirements"
-          onClick={() => history.push("/requirements")}
+          onClick={() =>
+            history.push("/hack-zurich-codevscovid-frontend//requirements")
+          }
         />
       </Tabs>
     </AppBar>
