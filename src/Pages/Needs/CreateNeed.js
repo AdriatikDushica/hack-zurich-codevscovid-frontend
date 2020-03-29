@@ -36,16 +36,33 @@ const CreateNeed = ({ history, token }) => {
         <CardContent>
           <Formik
             initialValues={{ ItemName: "", description: "", quantity: 0 }}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(
+              { ItemName, description, quantity },
+              { setSubmitting }
+            ) => {
               fetch("/me", {
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },
               })
                 .then((res) => res.json())
-                .then(console.log);
+                .then(({ id: userId }) => {
+                  return fetch(`/user/${userId}/need`, {
+                    method: "POST",
+                    headers: {
+                      Authorization: `Bearer ${token}`,
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      ItemName,
+                      description,
+                      quantity,
+                      tags: [],
+                    }),
+                  });
+                })
+                .catch(console.error);
               setSubmitting(false);
-              console.log(values);
             }}
           >
             {({
