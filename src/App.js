@@ -5,6 +5,7 @@ import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Needs from "./Pages/Needs/Needs";
 import AvailableResources from "./Pages/AvailableResources";
 import CreateNeed from "./Pages/Needs/CreateNeed";
+import Need from "./Pages/Needs/Need";
 
 function App({ location: { pathname } }) {
   return (
@@ -20,6 +21,9 @@ function App({ location: { pathname } }) {
         </Route>
         <Route path="/needs/create" exact>
           <CreateNeed />
+        </Route>
+        <Route path="/needs/detail/1234" exact>
+          <Need />
         </Route>
       </Switch>
     </div>

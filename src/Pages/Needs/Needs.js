@@ -20,15 +20,18 @@ import CreateNeedButton from "./CreateNeedButton";
 import { connect } from "react-redux";
 import { isLogged } from "../../redux/selectors";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import { withRouter } from "react-router-dom";
 
 const generateRandomData = () => {
   let data = [];
 
   for (let i = 0; i < 18; i++) {
+    let title = loremIpsum({ units: "words", count: 2 });
     data.push({
       id: v4(),
-      title: loremIpsum({ units: "words", count: 2 }),
+      title: title.charAt(0).toUpperCase() + title.slice(1),
       body: loremIpsum({ count: 4 }),
+      quantity: Math.floor(Math.random() * 10) * 10 + 15,
     });
   }
 
@@ -63,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Needs = ({ isLogged }) => {
+const Needs = ({ isLogged, history }) => {
   const classes = useStyles();
 
   const [data, setData] = useState(null);
@@ -95,7 +98,7 @@ const Needs = ({ isLogged }) => {
                   </IconButton>
                 }
                 title={need.title}
-                subheader="September 14, 2016"
+                subheader={`Quantity: ${need.quantity}`}
               />
               <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -103,13 +106,12 @@ const Needs = ({ isLogged }) => {
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
                 <IconButton aria-label="share">
                   <ShareIcon />
                 </IconButton>
-                <Button>Show more</Button>
+                <Button onClick={() => history.push("/needs/detail/1234")}>
+                  Donate
+                </Button>
               </CardActions>
             </Card>
           </Grid>
@@ -121,4 +123,4 @@ const Needs = ({ isLogged }) => {
 
 export default connect((state) => ({
   isLogged: isLogged(state),
-}))(Needs);
+}))(withRouter(Needs));
