@@ -42,7 +42,7 @@ const CreateNeed = ({ history, token, onSubmit }) => {
       <Card align={"left"} style={{ margin: "20px 0px" }}>
         <CardContent>
           <Formik
-            initialValues={{ ItemName: "", description: "", quantity: 0 }}
+            initialValues={{ ItemName: "", description: "", quantity: null }}
             onSubmit={(
               { ItemName, description, quantity },
               { setSubmitting }

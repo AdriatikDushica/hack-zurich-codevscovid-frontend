@@ -28,7 +28,7 @@ const generateRandomData = () => {
     data.push({
       id: v4(),
       title: loremIpsum({ units: "words", count: 2 }),
-      body: loremIpsum({ count: 2 }),
+      body: loremIpsum({ count: 4 }),
     });
   }
 
@@ -81,7 +81,7 @@ const Needs = ({ isLogged }) => {
       <Grid container spacing={3}>
         {data.map((need) => (
           <Grid item xs={4} key={need.id}>
-            <Card className={classes.root}>
+            <Card align={"left"} className={classes.root}>
               <CardHeader
                 avatar={
                   <Avatar
