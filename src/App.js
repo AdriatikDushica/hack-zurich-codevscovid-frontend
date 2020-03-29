@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "./Header";
+import Header from "./components/Header";
 import { Route, Switch } from "react-router-dom";
 import Requests from "./Pages/Requests";
 import AvailableResources from "./Pages/AvailableResources";

@@ -6,8 +6,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import Register from "./Pages/Register";
-import Login from "./Pages/Login";
+import Register from "../Pages/Register";
+import Login from "../Pages/Login";
+import { isLogged } from "../redux/selectors";
+import { connect } from "react-redux";
+import Logged from "./Logged";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -15,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = ({ history, location: { pathname } }) => {
+const Header = ({ isLogged, history, location: { pathname } }) => {
   const classes = useStyles();
 
   let currentTabIndex = -1;
@@ -29,9 +32,15 @@ const Header = ({ history, location: { pathname } }) => {
         <Typography variant="h6" align="left" className={classes.title}>
           Cosoli
         </Typography>
-        <Login />
-        <Typography>or</Typography>
-        <Register />
+        {isLogged ? (
+          <Logged />
+        ) : (
+          <>
+            <Login />
+            <Typography>or</Typography>
+            <Register />
+          </>
+        )}
       </Toolbar>
       <Tabs value={currentTabIndex} centered>
         <Tab
@@ -49,4 +58,6 @@ const Header = ({ history, location: { pathname } }) => {
   );
 };
 
-export default withRouter(Header);
+export default connect((state) => ({
+  isLogged: isLogged(state),
+}))(withRouter(Header));
