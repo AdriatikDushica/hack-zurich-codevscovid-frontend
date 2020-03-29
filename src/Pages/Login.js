@@ -8,6 +8,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import { setJwtToken } from "../redux/reducers/actionCreators";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const Login = ({ setToken }) => {
   const [open, setOpen] = React.useState(false);
@@ -56,7 +57,7 @@ const Login = ({ setToken }) => {
   return (
     <div>
       <Button color="inherit" onClick={handleClickOpen}>
-        Log in
+        <ExitToAppIcon /> Log in
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle id="form-dialog-title">Sign in</DialogTitle>
