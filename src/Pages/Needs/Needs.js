@@ -17,6 +17,8 @@ import grey from "@material-ui/core/colors/grey";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import CreateNeedButton from "./CreateNeedButton";
+import { connect } from "react-redux";
+import { isLogged } from "../../redux/selectors";
 
 const generateRandomData = () => {
   let data = [];
@@ -58,12 +60,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Needs = () => {
+const Needs = ({ isLogged }) => {
   const classes = useStyles();
 
   return (
     <Container className={classes.container}>
-      <CreateNeedButton />
+      {isLogged ? <CreateNeedButton /> : null}
       <Grid container spacing={3}>
         {data.map((need) => (
           <Grid item xs={4} key={need.id}>
@@ -105,4 +107,6 @@ const Needs = () => {
   );
 };
 
-export default Needs;
+export default connect((state) => ({
+  isLogged: isLogged(state),
+}))(Needs);
