@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import { Route, Switch } from "react-router-dom";
-import Requests from "./Pages/Requests";
+import Needs from "./Pages/Needs";
 import AvailableResources from "./Pages/AvailableResources";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
         <Route path="/" exact>
           <AvailableResources />
         </Route>
-        <Route path="/requests">
-          <Requests />
+        <Route path="/needs">
+          <Needs />
         </Route>
       </Switch>
     </div>

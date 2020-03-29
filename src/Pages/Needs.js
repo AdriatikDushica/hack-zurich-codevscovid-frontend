@@ -57,14 +57,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Requests = () => {
+const Needs = () => {
   const classes = useStyles();
 
   return (
     <Container className={classes.container}>
       <Grid container spacing={3}>
-        {data.map((request) => (
-          <Grid item xs={4} key={request.id}>
+        {data.map((need) => (
+          <Grid item xs={4} key={need.id}>
             <Card className={classes.root}>
               <CardHeader
                 avatar={
@@ -78,12 +78,12 @@ const Requests = () => {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title={request.title}
+                title={need.title}
                 subheader="September 14, 2016"
               />
               <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  {request.body}
+                  {need.body}
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>
@@ -103,4 +103,4 @@ const Requests = () => {
   );
 };
 
-export default Requests;
+export default Needs;

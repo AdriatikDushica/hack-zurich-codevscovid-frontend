@@ -24,7 +24,7 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
   let currentTabIndex = -1;
 
   if (pathname === "/") currentTabIndex = 0;
-  else if (pathname === "/requests") currentTabIndex = 1;
+  else if (pathname === "/needs") currentTabIndex = 1;
 
   return (
     <AppBar position="static">
@@ -50,8 +50,8 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
         />
         <Tab
           tabIndex={1}
-          label="requests"
-          onClick={() => history.push("/requests")}
+          label="needs"
+          onClick={() => history.push("/needs")}
         />
       </Tabs>
     </AppBar>
