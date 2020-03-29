@@ -24,7 +24,7 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
   let currentTabIndex = -1;
 
   if (pathname === "/") currentTabIndex = 0;
-  else if (pathname === "/needs") currentTabIndex = 1;
+  else if (/\/needs.*/.test(pathname)) currentTabIndex = 1;
 
   return (
     <AppBar position="static">

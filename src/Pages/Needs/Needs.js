@@ -16,6 +16,7 @@ import Button from "@material-ui/core/Button";
 import grey from "@material-ui/core/colors/grey";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import CreateNeedButton from "./CreateNeedButton";
 
 const generateRandomData = () => {
   let data = [];
@@ -62,6 +63,7 @@ const Needs = () => {
 
   return (
     <Container className={classes.container}>
+      <CreateNeedButton />
       <Grid container spacing={3}>
         {data.map((need) => (
           <Grid item xs={4} key={need.id}>
