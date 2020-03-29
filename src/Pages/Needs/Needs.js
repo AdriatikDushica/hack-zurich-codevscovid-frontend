@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { loremIpsum } from "lorem-ipsum";
 import { v4 } from "uuid";
 import { Card } from "@material-ui/core";
@@ -19,6 +19,7 @@ import Grid from "@material-ui/core/Grid";
 import CreateNeedButton from "./CreateNeedButton";
 import { connect } from "react-redux";
 import { isLogged } from "../../redux/selectors";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const generateRandomData = () => {
   let data = [];
@@ -31,10 +32,12 @@ const generateRandomData = () => {
     });
   }
 
-  return data;
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 500);
+  });
 };
-
-const data = generateRandomData();
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -62,6 +65,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Needs = ({ isLogged }) => {
   const classes = useStyles();
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    console.log("effect");
+    generateRandomData().then(setData);
+  }, []);
+
+  if (data == null) return <LinearProgress color={"secondary"} />;
 
   return (
     <Container className={classes.container}>
