@@ -3,11 +3,9 @@ import { Card } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
 import { withRouter } from "react-router-dom";
-import { Formik } from "formik";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
@@ -21,6 +19,7 @@ import Grid from "@material-ui/core/Grid";
 import { v4 } from "uuid";
 import { loremIpsum } from "lorem-ipsum";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import GoogleMapReact from "google-map-react";
 
 function handleErrors(response) {
   if (!response.ok) {
@@ -48,6 +47,14 @@ const CreateNeed = ({ history, token, onSubmit }) => {
     quantity: 30000,
   };
 
+  const mapData = {
+    center: {
+      lat: 59.95,
+      lng: 30.33,
+    },
+    zoom: 11,
+  };
+
   return (
     <Container style={{ marginTop: "20px" }}>
       <Breadcrumbs aria-label="breadcrumb">
@@ -69,14 +76,23 @@ const CreateNeed = ({ history, token, onSubmit }) => {
               </IconButton>
             }
             title={need.title}
-            subheader={`Quantity: ${need.quantity}`}
+            subheader={
+              <div>
+                Found 20'000 of 30'000
+                <LinearProgress variant="determinate" value={33} />
+              </div>
+            }
           />
           <CardContent>
-            <div>
-              <Typography>Found 20'000 of 30'000:</Typography>
-              <LinearProgress variant="determinate" value={33} />
+            <div style={{ height: "200px", width: "100%" }}>
+              <GoogleMapReact
+                //bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+                defaultCenter={mapData.center}
+                defaultZoom={mapData.zoom}
+              ></GoogleMapReact>
             </div>
 
+            <br />
             <br />
 
             <Typography variant="body2" color="textSecondary" component="p">
