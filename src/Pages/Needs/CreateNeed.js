@@ -39,7 +39,7 @@ const CreateNeed = ({ history, token }) => {
             onSubmit={(values, { setSubmitting }) => {
               fetch("/me", {
                 headers: {
-                  Authorization: `Beare ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               })
                 .then((res) => res.json())
