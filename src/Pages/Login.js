@@ -14,11 +14,11 @@ const Login = ({ setToken }) => {
 
   const [warning, setWarning] = useState(null);
 
-  /*const [email, setEmail] = useState("adriatik.dushica@gmail.com");
-  const [password, setPassword] = useState("test");*/
+  const [email, setEmail] = useState("adriatik.dushica@gmail.com");
+  const [password, setPassword] = useState("test");
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  /*const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");*/
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -48,7 +48,7 @@ const Login = ({ setToken }) => {
         else res.json().then((json) => setWarning(json.detail));
       })
       .then((res) => {
-        setToken(res);
+        setToken(res, email);
         handleClose();
       });
   };
@@ -105,5 +105,5 @@ const Login = ({ setToken }) => {
 };
 
 export default connect(undefined, (dispatch) => ({
-  setToken: (token) => dispatch(setJwtToken(token)),
+  setToken: (token, email) => dispatch(setJwtToken(token, email)),
 }))(Login);
