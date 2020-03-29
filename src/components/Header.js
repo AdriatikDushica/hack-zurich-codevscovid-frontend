@@ -21,10 +21,10 @@ const useStyles = makeStyles((theme) => ({
 const Header = ({ isLogged, history, location: { pathname } }) => {
   const classes = useStyles();
 
-  let currentTabIndex = -1;
+  let currentTabIndex = 0;
 
-  if (pathname === "/") currentTabIndex = 0;
-  else if (/\/needs.*/.test(pathname)) currentTabIndex = 1;
+  if (pathname === "/available-resources") currentTabIndex = 1;
+  else if (/\/needs.*/.test(pathname)) currentTabIndex = 0;
 
   return (
     <AppBar position="static">
@@ -45,13 +45,13 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
       <Tabs value={currentTabIndex} centered>
         <Tab
           tabIndex={0}
-          label="Available Resources"
-          onClick={() => history.push("/")}
+          label="needs"
+          onClick={() => history.push("/needs")}
         />
         <Tab
           tabIndex={1}
-          label="needs"
-          onClick={() => history.push("/needs")}
+          label="Available Resources"
+          onClick={() => history.push("/available-resources")}
         />
       </Tabs>
     </AppBar>

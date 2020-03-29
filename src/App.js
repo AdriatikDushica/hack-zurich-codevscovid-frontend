@@ -1,17 +1,18 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Needs from "./Pages/Needs/Needs";
 import AvailableResources from "./Pages/AvailableResources";
 import CreateNeed from "./Pages/Needs/CreateNeed";
 
-function App() {
+function App({ location: { pathname } }) {
   return (
     <div className="App">
       <Header />
+      {pathname === "/" ? <Redirect to="/needs" /> : null}
       <Switch>
-        <Route path="/" exact>
+        <Route path="/available-resources" exact>
           <AvailableResources />
         </Route>
         <Route path="/needs" exact>
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
