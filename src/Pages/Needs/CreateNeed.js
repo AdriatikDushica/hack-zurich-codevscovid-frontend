@@ -12,6 +12,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -20,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CreateNeed = ({ history, token }) => {
+const CreateNeed = ({ history, token, onSubmit }) => {
   const classes = useStyles();
 
   return (
@@ -40,28 +47,7 @@ const CreateNeed = ({ history, token }) => {
               { ItemName, description, quantity },
               { setSubmitting }
             ) => {
-              fetch("/me", {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              })
-                .then((res) => res.json())
-                .then(({ id: userId }) => {
-                  return fetch(`/user/${userId}/need`, {
-                    method: "POST",
-                    headers: {
-                      Authorization: `Bearer ${token}`,
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      ItemName,
-                      description,
-                      quantity,
-                      tags: [],
-                    }),
-                  });
-                })
-                .catch(console.error);
+              onSubmit(token, history, ItemName, description, quantity);
               setSubmitting(false);
             }}
           >
@@ -137,7 +123,35 @@ export default connect(
   (state) => ({
     token: state.jwt.token,
   }),
-  (dispatch) => ({
-    onSubmit: (token) => {},
+  () => ({
+    onSubmit: async (token, history, ItemName, description, quantity) => {
+      try {
+        const me = await fetch("/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then(handleErrors)
+          .then((res) => res.json());
+
+        await fetch(`/user/${me.id}/need`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ItemName,
+            description,
+            quantity,
+            tags: [],
+          }),
+        }).then(handleErrors);
+
+        history.push("/needs");
+      } catch (e) {
+        console.error(e);
+      }
+    },
   })
 )(withRouter(CreateNeed));
