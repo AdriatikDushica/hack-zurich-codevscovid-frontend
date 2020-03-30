@@ -20,6 +20,7 @@ import { v4 } from "uuid";
 import { loremIpsum } from "lorem-ipsum";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import GoogleMapReact from "google-map-react";
+import Oxygen from "./images/oxygen-concetrators.png";
 
 function handleErrors(response) {
   if (!response.ok) {
@@ -68,18 +69,23 @@ const CreateNeed = ({ history, token, onSubmit }) => {
         <Card align={"left"} className={classes.root}>
           <CardHeader
             avatar={
-              <Avatar aria-label="recipe" className={classes.avatar}></Avatar>
+              <Avatar aria-label="recipe" className={classes.avatar}>
+                <img
+                  style={{ maxHeight: "100%", maxWidth: "100%" }}
+                  src={Oxygen}
+                />
+              </Avatar>
             }
             action={
               <IconButton aria-label="settings">
                 <MoreVertIcon />
               </IconButton>
             }
-            title={need.title}
+            title={"Oxigen concentrators"}
             subheader={
               <div>
-                Found 20'000 of 30'000
-                <LinearProgress variant="determinate" value={33} />
+                Found 15 of 60
+                <LinearProgress variant="determinate" value={25} />
               </div>
             }
           />

@@ -30,7 +30,7 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" align="left" className={classes.title}>
-          Cosoli
+          CO-SOL
         </Typography>
         {isLogged ? (
           <Logged />

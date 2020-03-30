@@ -9,11 +9,9 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import CardActions from "@material-ui/core/CardActions";
 import { makeStyles } from "@material-ui/core/styles";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
-import grey from "@material-ui/core/colors/grey";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import CreateNeedButton from "./CreateNeedButton";
@@ -21,15 +19,29 @@ import { connect } from "react-redux";
 import { isLogged } from "../../redux/selectors";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { withRouter } from "react-router-dom";
+import _ from "lodash";
+
+import Gas from "./images/gas.png";
+import Hand from "./images/hand-sanitizers.png";
+import Diagnosis from "./images/means-of-diagnosis.png";
+import Oxygen from "./images/oxygen-concetrators.png";
+import Mask from "./images/oxygen-concetrators.png";
+
+export const availableTitles = {
+  Gas: Gas,
+  "Hand sanitizers": Hand,
+  "Means of diagnosis": Diagnosis,
+  "Oxigen concentrators": Oxygen,
+  Masks: Mask,
+};
 
 const generateRandomData = () => {
   let data = [];
 
   for (let i = 0; i < 18; i++) {
-    let title = loremIpsum({ units: "words", count: 2 });
     data.push({
       id: v4(),
-      title: title.charAt(0).toUpperCase() + title.slice(1),
+      title: _.sample(Object.keys(availableTitles)),
       body: loremIpsum({ count: 4 }),
       quantity: Math.floor(Math.random() * 10) * 10 + 15,
     });
@@ -59,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     transform: "rotate(180deg)",
   },
   avatar: {
-    backgroundColor: grey[500],
+    backgroundColor: "white",
   },
   container: {
     marginTop: "20px",
@@ -87,10 +99,12 @@ const Needs = ({ isLogged, history }) => {
             <Card align={"left"} className={classes.root}>
               <CardHeader
                 avatar={
-                  <Avatar
-                    aria-label="recipe"
-                    className={classes.avatar}
-                  ></Avatar>
+                  <Avatar aria-label="recipe" className={classes.avatar}>
+                    <img
+                      style={{ maxHeight: "100%", maxWidth: "100%" }}
+                      src={availableTitles[need.title]}
+                    />
+                  </Avatar>
                 }
                 action={
                   <IconButton aria-label="settings">
