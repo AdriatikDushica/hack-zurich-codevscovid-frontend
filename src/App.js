@@ -1,30 +1,17 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
-import { Redirect, Route, Switch, withRouter } from "react-router-dom";
-import Needs from "./Pages/Needs/Needs";
-import AvailableResources from "./Pages/AvailableResources";
-import CreateNeed from "./Pages/Needs/CreateNeed";
-import Need from "./Pages/Needs/Need";
+import { Route, Switch, withRouter } from "react-router-dom";
+import Homepage from "./Pages/Homepage";
+import GetStarted from "./Pages/GetStarted";
 
 function App({ location: { pathname } }) {
   return (
     <div className="App">
       <Header />
-      {pathname === "/" ? <Redirect to="/needs" /> : null}
       <Switch>
-        <Route path="/available-resources" exact>
-          <AvailableResources />
-        </Route>
-        <Route path="/needs" exact>
-          <Needs />
-        </Route>
-        <Route path="/needs/create" exact>
-          <CreateNeed />
-        </Route>
-        <Route path="/needs/detail/1234" exact>
-          <Need />
-        </Route>
+        <Route path={"/"} component={Homepage} exact />
+        <Route path={"/get-started"} component={GetStarted} exact />
       </Switch>
     </div>
   );

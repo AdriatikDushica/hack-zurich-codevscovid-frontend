@@ -1,17 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "animate.css/animate.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./theme";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router basename="/hack-zurich-codevscovid-frontend/">
-      <App />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router basename="/hack-zurich-codevscovid-frontend/">
+        <App />
+      </Router>
+    </ThemeProvider>
   </Provider>,
   document.getElementById("root")
 );

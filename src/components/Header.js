@@ -2,19 +2,24 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import Register from "../Pages/Register";
 import Login from "../Pages/Login";
 import { isLogged } from "../redux/selectors";
 import { connect } from "react-redux";
 import Logged from "./Logged";
+import Button from "@material-ui/core/Button";
+import Logo from "../logo.png";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
+  },
+  buttonSpacing: {
+    marginRight: theme.spacing(2),
+  },
+  headerLogo: {
+    cursor: "pointer",
   },
 }));
 
@@ -27,33 +32,26 @@ const Header = ({ isLogged, history, location: { pathname } }) => {
   else if (/\/needs.*/.test(pathname)) currentTabIndex = 0;
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={"animated fadeInDown"}>
       <Toolbar>
-        <Typography variant="h6" align="left" className={classes.title}>
-          CO-SOL
+        <Typography align="left" className={classes.title}>
+          <img
+            src={Logo}
+            className={classes.headerLogo}
+            onClick={() => history.push("/")}
+          />
         </Typography>
+        <Button className={classes.buttonSpacing}>ABOUT</Button>
+        <Button className={classes.buttonSpacing}>PLATFORM</Button>
+        <Button className={classes.buttonSpacing}>GET INVOLVED</Button>
         {isLogged ? (
           <Logged />
         ) : (
           <>
             <Login />
-            <Typography>or</Typography>
-            <Register />
           </>
         )}
       </Toolbar>
-      <Tabs value={currentTabIndex} centered>
-        <Tab
-          tabIndex={0}
-          label="needs"
-          onClick={() => history.push("/needs")}
-        />
-        <Tab
-          tabIndex={1}
-          label="Available Resources"
-          onClick={() => history.push("/available-resources")}
-        />
-      </Tabs>
     </AppBar>
   );
 };
