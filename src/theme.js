@@ -28,6 +28,11 @@ const theme = createMuiTheme({
         color: "#D38723 !important",
       },
     },
+    MuiOutlinedInput: {
+      notchedOutline: {
+        //borderColor: "#D38723 !important",
+      },
+    },
   },
 });
 
